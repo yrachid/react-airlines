@@ -47,6 +47,22 @@ task stopRunningJar(type: Exec) {
     commandLine "${rootDir}/scripts/local-test-server", "stop", "$buildDir/libs/app.jar", "$buildDir"
 }
 
+task dbSetup(type: Exec) {
+    commandLine "${rootDir}/scripts/local-database", "setup"
+}
+
+task dbStart(type: Exec) {
+    commandLine "${rootDir}/scripts/local-database", "start"
+}
+
+task dbContainerStop(type: Exec) {
+    commandLine "${rootDir}/scripts/local-database", "stop"
+}
+
+task dbContainerRemove(type: Exec) {
+    commandLine "${rootDir}/scripts/local-database", "remove"
+}
+
 flyway {
     url = System.getenv("SPRING_DATASOURCE_URL")
     user = System.getenv("SPRING_DATASOURCE_USERNAME")
@@ -60,5 +76,7 @@ bootRun {
             "-Dspring.resources.chain.cache=false"
     ]
 }
+
+bootRun.dependsOn(dbStart)
 
 build.mustRunAfter('clean')

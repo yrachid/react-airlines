@@ -7,22 +7,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static java.util.Collections.emptyList;
-
 @RestController
 @RequestMapping("/airline")
 public class BuscaController {
 
     private VooRepository vooRepository;
 
+    private AeroportoRepository repository;
+
     @Autowired
-    public BuscaController(VooRepository vooRepository) {
+    public BuscaController(VooRepository vooRepository, AeroportoRepository repository) {
         this.vooRepository = vooRepository;
+        this.repository = repository;
     }
 
     @GetMapping("/busca")
     public List<Aeroporto> origens() {
-        return emptyList();
+        return repository.findAll();
     }
 
 }
