@@ -1,6 +1,5 @@
 CREATE TABLE aeroporto (
-  id SERIAL PRIMARY KEY,
-  iata CHAR(3),
+  iata CHAR(3) PRIMARY KEY,
   nome varchar,
   cidade VARCHAR
 );
