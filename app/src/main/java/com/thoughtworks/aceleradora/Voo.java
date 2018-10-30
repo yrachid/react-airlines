@@ -1,4 +1,4 @@
-package com.thoughtworks.aceleradora.airline.dominio;
+package com.thoughtworks.aceleradora;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

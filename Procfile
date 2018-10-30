@@ -1,1 +1,1 @@
-web: java -jar build/libs/app.jar
+web: java -jar build/libs/app.jar -Dspring.profiles.active=heroku

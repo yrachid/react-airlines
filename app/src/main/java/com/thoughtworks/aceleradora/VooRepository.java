@@ -1,4 +1,4 @@
-package com.thoughtworks.aceleradora.airline.dominio;
+package com.thoughtworks.aceleradora;
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;

@@ -1,4 +1,4 @@
-package com.thoughtworks.aceleradora.airline.dominio;
+package com.thoughtworks.aceleradora;
 
 import java.math.BigDecimal;
 import java.util.Objects;

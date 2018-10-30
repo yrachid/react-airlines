@@ -1,4 +1,4 @@
-package com.thoughtworks.aceleradora.configuracao;
+package com.thoughtworks.aceleradora;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;

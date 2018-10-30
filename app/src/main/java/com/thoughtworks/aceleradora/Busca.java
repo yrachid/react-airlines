@@ -1,4 +1,4 @@
-package com.thoughtworks.aceleradora.airline.dominio;
+package com.thoughtworks.aceleradora;
 
 import java.time.LocalDate;
 import java.util.Objects;

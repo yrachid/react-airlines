@@ -1,4 +1,4 @@
-package com.thoughtworks.aceleradora.airline.dominio;
+package com.thoughtworks.aceleradora;
 
 public enum Regulacao {
     BAGAGEM_DE_MAO,
