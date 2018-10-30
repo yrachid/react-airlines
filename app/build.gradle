@@ -7,12 +7,7 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-        classpath "org.postgresql:postgresql:42.2.5"
     }
-}
-
-plugins {
-    id "org.flywaydb.flyway" version "5.1.4"
 }
 
 apply plugin: 'java'
@@ -61,12 +56,6 @@ task dbContainerStop(type: Exec) {
 
 task dbContainerRemove(type: Exec) {
     commandLine "${rootDir}/scripts/local-database", "remove"
-}
-
-flyway {
-    url = System.getenv("SPRING_DATASOURCE_URL")
-    user = System.getenv("SPRING_DATASOURCE_USERNAME")
-    password = System.getenv("SPRING_DATASOURCE_PASSWORD")
 }
 
 bootRun {
