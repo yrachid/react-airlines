@@ -1,0 +1,6 @@
+rootProject.name = 'esqueleto-ambulante'
+
+include 'app'
+include 'testes-funcionais'
+include 'view'
+

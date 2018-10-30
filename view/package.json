@@ -1,0 +1,30 @@
+{
+  "name": "view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpile:watch": "./node_modules/.bin/webpack --watch",
+    "transpile": "./node_modules/.bin/webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.4.1",
+    "bulma": "^0.7.1",
+    "bulma-o-steps": "^1.0.9",
+    "bulma-pricingtable": "^0.2.0",
+    "bulma-steps-component": "^0.5.3",
+    "moment": "^2.22.2",
+    "pikaday": "^1.7.0"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "hard-source-webpack-plugin": "^0.12.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
