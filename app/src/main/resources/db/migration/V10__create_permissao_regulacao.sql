@@ -1,2 +1,0 @@
-CREATE TYPE permissao_regulacao AS ENUM ('PERMITIDO', 'NAO_PERMITIDO', 'COM_CUSTO');
-
