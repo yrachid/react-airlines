@@ -1,53 +1,15 @@
-# Esqueleto Ambulante
+# React Airlines
 
-Uma aplicação mínima em Spring Boot.
-
-[![CircleCI](https://circleci.com/gh/aceleradora-TW/esqueleto-ambulante/tree/master.svg?style=svg)](https://circleci.com/gh/aceleradora-TW/esqueleto-ambulante/tree/master)
+Como diabos se usa React?
 
 ## Dependências
 
 - Java 8
 - Postgres
 - Node/npm
+- Paciência
 
-## Configuração inicial
+## Links
 
-Após instalar todas as dependências, execute as migrações do banco de dados:
-
-```bash
-./gradlew flywayMigrate -i
-```
-
-## Comandos
-
-Para executar a aplicação:
-
-```sh
-./gradlew bootRun
-```
-
-Executando os testes:
-
-```sh
-./gradlew test
-```
-
-Demais comandos disponíveis:
-
-```sh
-./gradlew tasks
-```
-
-## Ferramentas
-
-- [Circle CI](https://circleci.com/gh/aceleradora-TW/esqueleto-ambulante)
-
-
-## Ambientes
-
-__Integração__
-
-Endereço: https://esqueleto-integracao.herokuapp.com
-
-Este ambiente é atualizado toda vez que uma alteração é introduzida no projeto e as verificações automatizados do Circle CI executam
-exitosamente. Ou seja é o ambiente mais instável e que recebe as alterações mais recentes.
+- [Afinal, como é que se começa um projeto em React com Webpack?](https://medium.freecodecamp.org/part-1-react-app-from-scratch-using-webpack-4-562b1d231e75)
+- [React com IntelliJ](https://www.jetbrains.com/help/idea/react.html)
