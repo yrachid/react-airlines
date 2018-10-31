@@ -1,4 +1,4 @@
-rootProject.name = 'aceleradora-airlines-vue'
+rootProject.name = 'react-airlines'
 
 include 'app'
 include 'testes-funcionais'
