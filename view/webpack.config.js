@@ -7,8 +7,21 @@ console.log("MODE    >>>>>>>>>>>>>>>>> " + transpileMode);
 module.exports = {
 
     entry: {
-        main: './main.js'
+        main: './src/js/index.js'
     },
+
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            }
+        ]
+    },
+
 
     output: {
         path: rootDir
