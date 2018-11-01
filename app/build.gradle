@@ -31,31 +31,39 @@ repositories {
     mavenCentral()
 }
 
-task startFromJar(type: Exec, dependsOn: assemble) {
-    description = "Inicia aplicacao em plano de fundo, utilizando o jar gerado pela task :app:assemble"
+task startFromJar(type: Exec, dependsOn: assemble, group: 'Local Development') {
+    description = "Assembles app in a jar and runs it on the background"
 
     commandLine "${rootDir}/scripts/local-test-server", "start", "$buildDir/libs/app.jar", "$buildDir"
 }
 
-task stopRunningJar(type: Exec) {
-    description = "Para aplicacao que foi iniciada por :app:startFromJar"
+task stopRunningJar(type: Exec, group: 'Local Development') {
+    description = "Stops a running app previously started by :app:startFromJar task"
 
     commandLine "${rootDir}/scripts/local-test-server", "stop", "$buildDir/libs/app.jar", "$buildDir"
 }
 
-task dbSetup(type: Exec) {
+task dbSetup(type: Exec, group: 'Local Development') {
+    description = "Spins up a new Postgres docker container for local development"
+
     commandLine "${rootDir}/scripts/local-database", "setup"
 }
 
-task dbStart(type: Exec) {
+task dbStart(type: Exec, group: 'Local Development') {
+    description = "Starts a previously created Postgres docker container"
+
     commandLine "${rootDir}/scripts/local-database", "start"
 }
 
-task dbContainerStop(type: Exec) {
+task dbContainerStop(type: Exec, group: 'Local Development') {
+    description = "Stops a running Postgres docker container"
+
     commandLine "${rootDir}/scripts/local-database", "stop"
 }
 
-task dbContainerRemove(type: Exec) {
+task dbContainerRemove(type: Exec, group: 'Local Development') {
+    description = "Removes the Postgres docker container created for this application"
+
     commandLine "${rootDir}/scripts/local-database", "remove"
 }
 

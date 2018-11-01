@@ -1,6 +1,4 @@
 task npmInstall(type: Exec) {
-    description = "Instala dependencias dos testes funcionais (se ja nao estiverem instaladas)."
-
     inputs.file("package.json")
     inputs.file("package-lock.json")
 
@@ -9,7 +7,7 @@ task npmInstall(type: Exec) {
     commandLine 'npm', 'install', '--verbose'
 }
 
-task transpileDev(type: Exec, dependsOn: ['npmInstall']) {
+task transpileDev(type: Exec, dependsOn: ['npmInstall'], group: 'Local Development') {
 
     def outputLocation = "${project(':app').projectDir}/src/main/resources/public"
 
@@ -36,8 +34,3 @@ task transpileProd(type: Exec, dependsOn: ['npmInstall']) {
 
     commandLine "npm", "run", "transpile"
 }
-
-task viewRun {
-    dependsOn = [':view:transpilarRecursosDev']
-}
-

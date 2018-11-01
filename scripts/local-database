@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
-readonly CONTAINER_NAME=aceleradora-airlines-db
-readonly DATABASE_NAME=aceleradora_airlines
+readonly CONTAINER_NAME=react-airlines-db
+readonly DATABASE_NAME=react_airlines
 readonly DATABASE_PASSWORD=airlines
 readonly DATABASE_PORT='5432'
 
@@ -109,6 +109,5 @@ case ${1:-''} in
     echo
     echo -e "\t remove: Remove o container, deletando todos os dados persistidos"
     echo
-
   ;;
 esac
