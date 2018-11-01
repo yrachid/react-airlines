@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom";
 import React from "react";
-import Title from "./components/Title"
+import Root from "./components/Root";
 
-
-ReactDOM.render(<Title />, document.getElementById("app"));
+ReactDOM.render(<Root />, document.getElementById("app"));
