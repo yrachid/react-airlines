@@ -43,3 +43,4 @@ Get help:
 - [Webpack with IntelliJ](https://www.jetbrains.com/help/idea/using-webpack.html)
 - [React with IntelliJ](https://www.jetbrains.com/help/idea/react.html)
 - [React with HTTP](https://www.javascriptstuff.com/react-ajax-best-practices/)
+- [You probably don't need derived state](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html)

@@ -1,35 +1,6 @@
 import React from "react";
 import Title from "./Title";
-
-class Airports extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            airports: []
-        };
-    }
-
-    static getDerivedStateFromProps(nextProps, previousState) {
-        return {
-            airports: nextProps.airports
-        };
-    }
-
-    render() {
-       const airportItems = this.state.airports.map(airportData => (
-           <li key={airportData.iata}>{airportData.iata} - {airportData.nome}</li>
-       ));
-
-       return (
-           <ul>
-               {airportItems}
-           </ul>
-       );
-    }
-
-}
+import Airports from "./Airports";
 
 class Root extends React.Component {
 
@@ -42,11 +13,7 @@ class Root extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/airline/busca', {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        fetch('/airline/busca')
             .then(stuff => stuff.json())
             .then(body =>
                 this.setState({
