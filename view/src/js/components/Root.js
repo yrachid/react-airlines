@@ -1,6 +1,42 @@
-import React from "react";
-import Title from "./Title";
-import Airports from "./Airports";
+import React, {Fragment} from "react";
+import {GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
+import {compose, withProps} from 'recompose';
+
+const Whatever = ({airport}) => (<div>
+    <h1>{airport.name}</h1>
+    <p>{airport.city}</p>
+    <p>{airport.country}</p>
+</div>);
+
+const Map = compose(
+    withProps({
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+        loadingElement: <div style={{height: `100%`}}/>,
+        containerElement: <div style={{height: `100%`}}/>,
+        mapElement: <div style={{height: `100%`}}/>,
+    }),
+    withScriptjs,
+    withGoogleMap
+)(({airports}) => {
+
+        const airportMarkers = airports
+            .filter(({country}) => country === "Brazil")
+            .map(airport =>
+                <Marker key={airport.latitude} position={{lat: airport.latitude, lng: airport.longitude}}>
+                    <InfoWindow>
+                        <Whatever airport={airport}/>
+                    </InfoWindow>
+                </Marker>
+            );
+
+        return <GoogleMap
+            defaultZoom={8}
+            defaultCenter={{lat: -34.397, lng: 150.644}}>
+
+            {airportMarkers}
+        </GoogleMap>
+    }
+);
 
 class Root extends React.Component {
 
@@ -25,10 +61,9 @@ class Root extends React.Component {
 
     render() {
         return (
-            <div>
-                <Title content={this.state.title}/>
-                <Airports airports={this.state.airports}/>
-            </div>
+            <Fragment>
+                <Map airports={this.state.airports}/>
+            </Fragment>
         );
     }
 }
