@@ -1,5 +1,9 @@
-CREATE TABLE aeroporto (
+CREATE TABLE airport (
   iata CHAR(3) PRIMARY KEY,
-  nome varchar,
-  cidade VARCHAR
+  name VARCHAR,
+  city VARCHAR,
+  country VARCHAR,
+  latitude FLOAT,
+  longitude FLOAT,
+  timezone VARCHAR
 );

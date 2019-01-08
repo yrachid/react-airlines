@@ -1,1 +1,1 @@
-DELETE FROM aeroporto;
+DELETE FROM airport;
