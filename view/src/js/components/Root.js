@@ -26,7 +26,7 @@ class Root extends React.Component {
     render() {
         return (
             <div>
-                <Title/>
+                <Title content={this.state.title}/>
                 <Airports airports={this.state.airports}/>
             </div>
         );

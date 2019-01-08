@@ -2,9 +2,9 @@ import React from "react";
 
 const Airports = ({airports}) =>
     <ul> {
-        airports.map(({iata, nome}) => (<li key={iata}> {iata} - {nome} </li>))
+        airports.map(({iata, city, country}) => (<li key={iata}> {iata} - {city} - {country} </li>))
     }
-    </ul>
+    </ul>;
 
 
 export default Airports;
