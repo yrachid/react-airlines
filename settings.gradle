@@ -3,4 +3,5 @@ rootProject.name = 'react-airlines'
 include 'app'
 include 'testes-funcionais'
 include 'view'
+include 'scripts'
 

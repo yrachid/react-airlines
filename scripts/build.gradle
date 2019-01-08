@@ -1,0 +1,41 @@
+def dbCtl = "${projectDir}/local-database"
+
+def testServerCtl = "${projectDir}/local-test-server"
+
+def appBuildDir = "${project('::app').buildDir}"
+
+task startFromJar(type: Exec, dependsOn: '::app:assemble', group: 'Local Development') {
+    description = "Assembles app in a jar and runs it on the background"
+
+    commandLine testServerCtl, "start", "$appBuildDir/libs/app.jar", appBuildDir
+}
+
+task stopRunningJar(type: Exec, group: 'Local Development') {
+    description = "Stops a running app previously started by :app:startFromJar task"
+
+    commandLine testServerCtl, "stop", "$appBuildDir/libs/app.jar", appBuildDir
+}
+
+task dbSetup(type: Exec, group: 'Local Development') {
+    description = "Spins up a new Postgres docker container for local development"
+
+    commandLine dbCtl, "setup"
+}
+
+task dbStart(type: Exec, group: 'Local Development') {
+    description = "Starts a previously created Postgres docker container"
+
+    commandLine dbCtl, "start"
+}
+
+task dbContainerStop(type: Exec, group: 'Local Development') {
+    description = "Stops a running Postgres docker container"
+
+    commandLine dbCtl, "stop"
+}
+
+task dbContainerRemove(type: Exec, group: 'Local Development') {
+    description = "Removes the Postgres docker container created for this application"
+
+    commandLine dbCtl, "remove"
+}
