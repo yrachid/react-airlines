@@ -9,7 +9,7 @@ public class SearchControllerTest {
     @Test
     public void responds_with_all_available_airports() {
 
-        AeroportoRepository repository = mock(AeroportoRepository.class);
+        AirportRepository repository = mock(AirportRepository.class);
 
 //        when(repository.findAll()).thenReturn(asList(
 //                new Airport("POA", "Porto Alegre", "Porto Alegre"),

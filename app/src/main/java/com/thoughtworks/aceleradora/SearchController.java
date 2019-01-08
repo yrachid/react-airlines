@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SearchController {
 
-    private AeroportoRepository repository;
+    private AirportRepository repository;
 
     @GetMapping("/search")
     public List<Airport> airports() {
