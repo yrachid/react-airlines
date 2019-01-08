@@ -10,12 +10,10 @@ const MAP_PROPERTIES = {
     mapElement: <div style={{height: `100%`}}/>
 };
 
-const tenBrAirports = (props) => props
-    .airports
-    .filter(airport => airport.country === "Brazil")
-    .slice(0, 11);
-
-const toCityMarker = (airport) => <CityMarker key={airport.iata} airport={airport}/>;
+const applyMapsConfig = compose(
+    withProps(MAP_PROPERTIES),
+    withScriptjs,
+    withGoogleMap);
 
 const map = (props) => (
     <GoogleMap defaultZoom={8} defaultCenter={{lat: -34.397, lng: 150.644}}>
@@ -23,9 +21,13 @@ const map = (props) => (
     </GoogleMap>
 );
 
-const Map = compose(
-    withProps(MAP_PROPERTIES),
-    withScriptjs,
-    withGoogleMap)(map);
+const tenBrAirports = (props) => props
+    .airports
+    .filter(airport => airport.country === "Brazil")
+    .slice(0, 11);
+
+const toCityMarker = (airport) => <CityMarker key={airport.iata} airport={airport}/>;
+
+const Map = applyMapsConfig(map);
 
 export default Map;
