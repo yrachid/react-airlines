@@ -37,3 +37,4 @@ package-lock.json
 # Recursos estaticos
 app/src/main/resources/public/*.css
 app/src/main/resources/public/*.js
+view/dist

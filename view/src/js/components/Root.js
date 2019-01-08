@@ -13,7 +13,7 @@ class Root extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/airline/busca')
+        fetch('/airline/search')
             .then(stuff => stuff.json())
             .then(body =>
                 this.setState({

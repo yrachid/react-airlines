@@ -10,12 +10,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/airline")
 @AllArgsConstructor
-public class BuscaController {
+public class SearchController {
 
     private AeroportoRepository repository;
 
-    @GetMapping("/busca")
-    public List<Aeroporto> aeroportos() {
+    @GetMapping("/search")
+    public List<Airport> airports() {
         return repository.findAll();
     }
 
